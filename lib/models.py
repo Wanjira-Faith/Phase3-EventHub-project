@@ -16,6 +16,14 @@ event_speaker_association = Table(
     Column('speaker_id', Integer, ForeignKey('speakers.id'))
 )
 
+# Many-to-Many Relationship Table (Events - Venues)
+event_venue_association = Table(
+    'event_venue_association',
+    Base.metadata,
+    Column('event_id', Integer, ForeignKey('events.id')),
+    Column('venue_id', Integer, ForeignKey('venues.id'))
+)
+
 class Event(Base):
     __tablename__ = 'events'
     
@@ -29,6 +37,9 @@ class Event(Base):
     # Define the many-to-many relationship with speakers
     speakers = relationship('Speaker', secondary=event_speaker_association, back_populates='events')
 
+    # Define the many-to-many relationship with venues
+    venues = relationship('Venue', secondary=event_venue_association, back_populates='events')
+   
 
 class Participant(Base):
     __tablename__ = 'participants'
@@ -51,5 +62,8 @@ class Venue(Base):
     
     id = Column(Integer, primary_key=True)
     name = Column(String(100))    
+
+   # Define the many-to-many relationship with events
+    events = relationship('Event', secondary=event_venue_association, back_populates='venues')  
         
     
