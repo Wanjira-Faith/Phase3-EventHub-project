@@ -16,4 +16,10 @@ class Event(Base):
     date = Column(Date)
     description = Column(String(255))
     capacity = Column(Integer)
+
+class Participant(Base):
+    __tablename__ = 'participants'
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100))   
     
