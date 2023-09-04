@@ -49,6 +49,10 @@ class Participant(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(100))  
 
+    # Define the many-to-one relationship with events
+    event_id = Column(Integer, ForeignKey('events.id'))
+    event = relationship('Event', back_populates='participants')
+
 class Speaker(Base):
     __tablename__ = 'speakers'
     
