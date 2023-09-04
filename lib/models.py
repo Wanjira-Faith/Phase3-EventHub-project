@@ -21,5 +21,12 @@ class Participant(Base):
     __tablename__ = 'participants'
     
     id = Column(Integer, primary_key=True)
-    name = Column(String(100))   
+    name = Column(String(100))  
+
+class Speaker(Base):
+    __tablename__ = 'speakers'
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100))
+        
     
