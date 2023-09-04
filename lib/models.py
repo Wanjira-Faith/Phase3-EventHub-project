@@ -33,6 +33,8 @@ class Event(Base):
     description = Column(String(255))
     capacity = Column(Integer)
 
+    # Define the one-to-many relationship with participants
+    participants = relationship('Participant', back_populates='event')
 
     # Define the many-to-many relationship with speakers
     speakers = relationship('Speaker', secondary=event_speaker_association, back_populates='events')
