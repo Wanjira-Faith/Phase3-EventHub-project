@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 # Define database connection
-engine = create_engine('sqlite:///event_hub.db')
+engine = create_engine('sqlite:///event_hub.db', echo=True)
 
 # Base class for all classes
 Base = declarative_base()
