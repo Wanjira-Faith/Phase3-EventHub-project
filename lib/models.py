@@ -84,3 +84,10 @@ class Venue(Base):
         
     def __repr__(self):
         return f"<Venue(name='{self.name}')>"
+
+# create all tables in the database
+Base.metadata.create_all(engine)
+
+# create session
+Session = sessionmaker(bind=engine)
+session = Session()        
