@@ -41,7 +41,10 @@ class Event(Base):
 
     # Define the many-to-many relationship with venues
     venues = relationship('Venue', secondary=event_venue_association, back_populates='events')
-   
+
+    def __repr__(self):
+        return f"<Event(name='{self.name}', date='{self.date}')>"   
+    
 
 class Participant(Base):
     __tablename__ = 'participants'
@@ -53,6 +56,10 @@ class Participant(Base):
     event_id = Column(Integer, ForeignKey('events.id'))
     event = relationship('Event', back_populates='participants')
 
+    def __repr__(self):
+        return f"<Participant(name='{self.name}')>"
+    
+
 class Speaker(Base):
     __tablename__ = 'speakers'
     
@@ -61,6 +68,9 @@ class Speaker(Base):
 
     # Define the many-to-many relationship with events
     events = relationship('Event', secondary=event_speaker_association, back_populates='speakers')
+
+    def __repr__(self):
+        return f"<Speaker(name='{self.name}')>"
 
 
 class Venue(Base):
@@ -72,4 +82,5 @@ class Venue(Base):
    # Define the many-to-many relationship with events
     events = relationship('Event', secondary=event_venue_association, back_populates='venues')  
         
-    
+    def __repr__(self):
+        return f"<Venue(name='{self.name}')>"
