@@ -23,6 +23,9 @@ def upgrade():
     sa.Column('name', sa.String(length=100), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
+
+    op.add_column('participants', sa.Column('event_id', sa.Integer(), nullable=True))
+
     # ### end Alembic commands ###
 
 
