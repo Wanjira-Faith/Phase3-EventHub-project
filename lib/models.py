@@ -51,8 +51,7 @@ class Participant(Base):
     
     id = Column(Integer, primary_key=True)
     name = Column(String(100))  
-    event_id = Column(Integer, ForeignKey('events.id'))
-
+    
     # Define the many-to-one relationship with events
     event = relationship('Event', back_populates='participants')
 
