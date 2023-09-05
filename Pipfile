@@ -7,6 +7,7 @@ name = "pypi"
 click = "*"
 alembic = "*"
 sqlalchemy = "*"
+faker = "*"
 
 [dev-packages]
 
