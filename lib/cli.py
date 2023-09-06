@@ -50,4 +50,8 @@ def register_participant(event_name, participant_name):
         # Add the participant to the list
         participants_list.append(participant_name)
 
+        click.echo(f'Participant "{participant_name}" registered for the event "{event_name}".')
+    else:
+        click.echo(f'Event with name "{event_name}" not found.')
+
     
