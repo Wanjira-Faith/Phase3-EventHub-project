@@ -62,7 +62,6 @@ def register_participant(event_name, participant_name):
 def add_speaker(event_name, speaker_name):
     """Add a speaker to an event."""
    
-
     session = create_session(engine)
 
      # Find the event by name
@@ -72,5 +71,10 @@ def add_speaker(event_name, speaker_name):
         speaker = Speaker(name=speaker_name)
         event.speakers.append(speaker)
         session.commit()
+
+        click.echo(f'Speaker "{speaker_name}" added to the event "{event_name}".')
+    else:
+        click.echo(f'Event with name "{event_name}" not found.')
+
         
      
