@@ -84,5 +84,13 @@ def add_speaker(event_name, speaker_name):
 def add_venue(event_name, venue_name):
     """Add a venue to an event."""
    
-    session = create_session(engine)        
+    session = create_session(engine)  
+
+     # Find the event by name
+    event = session.query(Event).filter_by(name=event_name).first()
+
+    if event:
+        venue = Venue(name=venue_name)
+        event.venues.append(venue)
+        session.commit()      
      
