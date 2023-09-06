@@ -143,3 +143,9 @@ def list_events():
             }
         
         click.echo("List of Events in Chronological Order:")
+
+        for event_name in sorted(events_dict.keys(), key=lambda x: events_dict[x]['Date']):
+            event_details = events_dict[event_name]
+            click.echo(f"Event Name: {event_details['Name']}, Date: {event_details['Date']}")
+    else:
+        click.echo("No events found in the database.")
