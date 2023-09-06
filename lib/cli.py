@@ -128,3 +128,6 @@ def list_events():
     """List events in chronological order based on date."""
     
     session = create_session(engine)  
+
+    # Query all events and sort them by date
+    events = session.query(Event).order_by(Event.date).all()
