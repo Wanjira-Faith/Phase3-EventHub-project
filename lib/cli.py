@@ -105,4 +105,7 @@ def add_venue(event_name, venue_name):
 def list_participants(event_name):
     """List all registered participants for an event."""
     
-    session = create_session(engine)       
+    session = create_session(engine) 
+
+    # Find the event by name
+    event = session.query(Event).filter_by(name=event_name).first()    
