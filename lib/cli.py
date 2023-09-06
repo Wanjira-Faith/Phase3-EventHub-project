@@ -64,4 +64,13 @@ def add_speaker(event_name, speaker_name):
    
 
     session = create_session(engine)
+
+     # Find the event by name
+    event = session.query(Event).filter_by(name=event_name).first()
+
+    if event:
+        speaker = Speaker(name=speaker_name)
+        event.speakers.append(speaker)
+        session.commit()
+        
      
