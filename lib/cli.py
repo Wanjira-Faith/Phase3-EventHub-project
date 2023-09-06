@@ -17,4 +17,5 @@ def cli():
 def create_event(name, date, description, capacity):
     """Create a new event."""
 
-   
+# Create a session using create_session from utils.py
+    session = create_session(engine)   
