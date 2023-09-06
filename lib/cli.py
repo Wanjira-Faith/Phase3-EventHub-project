@@ -54,4 +54,14 @@ def register_participant(event_name, participant_name):
     else:
         click.echo(f'Event with name "{event_name}" not found.')
 
-    
+
+# Add speaker to an event
+@cli.command()
+@click.option('--event-name', prompt='Event Name', help='Name of the event')
+@click.option('--speaker-name', prompt='Speaker Name', help='Name of the speaker')
+def add_speaker(event_name, speaker_name):
+    """Add a speaker to an event."""
+   
+
+    session = create_session(engine)
+     
