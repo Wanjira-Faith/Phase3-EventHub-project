@@ -8,6 +8,9 @@ Base.metadata.create_all(engine)
 # Initialize an empty list to store registered participants
 participants_list = []
 
+# Initialize an empty dictionary to store events
+events_dict = {}
+
 @click.group()
 def cli():
     pass
