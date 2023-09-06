@@ -97,3 +97,12 @@ def add_venue(event_name, venue_name):
         click.echo(f'Venue "{venue_name}" added to the event "{event_name}".')
     else:
         click.echo(f'Event with name "{event_name}" not found.')  
+
+
+# Displays List of registered participants
+@cli.command()
+@click.option('--event-name', prompt='Event Name', help='Name of the event')
+def list_participants(event_name):
+    """List all registered participants for an event."""
+    
+    session = create_session(engine)       
