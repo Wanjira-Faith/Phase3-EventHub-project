@@ -121,3 +121,10 @@ def list_participants(event_name):
     else:
         click.echo(f'Event with name "{event_name}" not found.')
  
+
+# Displays list of events in chronological order based on date
+@cli.command()
+def list_events():
+    """List events in chronological order based on date."""
+    
+    session = create_session(engine)  
