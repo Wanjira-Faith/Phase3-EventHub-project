@@ -134,3 +134,12 @@ def list_events():
 
     # Query all events and sort them by date
     events = session.query(Event).order_by(Event.date).all()
+
+    if events:
+        for event in events:
+            events_dict[event.name] = {
+                "Name": event.name,
+                "Date": event.date.strftime('%Y-%m-%d')
+            }
+        
+        click.echo("List of Events in Chronological Order:")
