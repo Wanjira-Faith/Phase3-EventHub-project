@@ -22,7 +22,7 @@ def validate_date(ctx, param, value):
     except ValueError:
         raise click.BadParameter('Date format should be YYYY-MM-DD')
 
-
+# Create new event
 @cli.command()
 @click.option('--name', prompt='Event Name', help='Name of the event')
 @click.option('--date', prompt='Event Date (YYYY-MM-DD)', callback=validate_date, help='Date of the event')
