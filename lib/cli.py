@@ -23,3 +23,5 @@ def create_event(name, date, description, capacity):
     event = Event(name=name, date=date, description=description, capacity=capacity)
     session.add(event)
     session.commit()
+
+    click.echo(f'Event "{name}" created successfully.')
