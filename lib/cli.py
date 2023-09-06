@@ -41,3 +41,13 @@ def register_participant(event_name, participant_name):
 
     # Find the event by name
     event = session.query(Event).filter_by(name=event_name).first()    
+
+    if event:
+        participant = Participant(name=participant_name, event=event)
+        session.add(participant)
+        session.commit()
+        
+        # Add the participant to the list
+        participants_list.append(participant_name)
+
+    
