@@ -92,5 +92,8 @@ def add_venue(event_name, venue_name):
     if event:
         venue = Venue(name=venue_name)
         event.venues.append(venue)
-        session.commit()      
-     
+        session.commit()  
+
+        click.echo(f'Venue "{venue_name}" added to the event "{event_name}".')
+    else:
+        click.echo(f'Event with name "{event_name}" not found.')  
