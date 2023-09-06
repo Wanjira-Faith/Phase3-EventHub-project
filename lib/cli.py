@@ -5,6 +5,9 @@ from utils import create_session, create_db_engine
 engine = create_db_engine()
 Base.metadata.create_all(engine)
 
+# Initialize an empty list to store registered participants
+participants_list = []
+
 @click.group()
 def cli():
     pass
@@ -37,4 +40,4 @@ def register_participant(event_name, participant_name):
     session = create_session(engine)    
 
     # Find the event by name
-    event = session.query(Event).filter_by(name=event_name).first()
+    event = session.query(Event).filter_by(name=event_name).first()    
