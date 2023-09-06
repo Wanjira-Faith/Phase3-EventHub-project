@@ -25,3 +25,13 @@ def create_event(name, date, description, capacity):
     session.commit()
 
     click.echo(f'Event "{name}" created successfully.')
+
+# Register a participant for an event
+@cli.command()
+@click.option('--event-name', prompt='Event Name', help='Name of the event')
+@click.option('--participant-name', prompt='Participant Name', help='Name of the participant')
+def register_participant(event_name, participant_name):
+    """Register a participant for an event."""
+  
+    # Create a session using create_session from utils.py
+    session = create_session(engine)    
