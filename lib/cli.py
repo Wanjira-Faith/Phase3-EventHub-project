@@ -76,5 +76,13 @@ def add_speaker(event_name, speaker_name):
     else:
         click.echo(f'Event with name "{event_name}" not found.')
 
-        
+
+# Add a venue to an event
+@cli.command()
+@click.option('--event-name', prompt='Event Name', help='Name of the event')
+@click.option('--venue-name', prompt='Venue Name', help='Name of the venue')
+def add_venue(event_name, venue_name):
+    """Add a venue to an event."""
+   
+    session = create_session(engine)        
      
