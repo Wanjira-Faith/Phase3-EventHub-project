@@ -4,3 +4,9 @@ from utils import create_session, create_db_engine
 
 engine = create_db_engine()
 Base.metadata.create_all(engine)
+
+@click.group()
+def cli():
+    pass
+
+   
