@@ -21,13 +21,19 @@ def validate_date(ctx, param, value):
         return datetime.strptime(value, '%Y-%m-%d').date()
     except ValueError:
         raise click.BadParameter('Date format should be YYYY-MM-DD')
+    
+def validate_non_empty(ctx, param, value):
+    if not value:
+        raise click.BadParameter(f"{param.human_readable_name} cannot be empty.")
+    return value
 
 # Create new event
 @cli.command()
-@click.option('--name', prompt='Event Name', help='Name of the event')
+@click.option('--name', prompt='Event Name', help='Name of the event', default='', callback=validate_non_empty)
 @click.option('--date', prompt='Event Date (YYYY-MM-DD)', callback=validate_date, help='Date of the event')
-@click.option('--description', prompt='Event Description', help='Description of the event')
-@click.option('--capacity', prompt='Event Capacity', type=int, help='Maximum capacity of the event')
+@click.option('--description', prompt='Event Description', help='Description of the event', callback=validate_non_empty, default='')
+@click.option('--capacity', prompt='Event Capacity', type=int, help='Maximum capacity of the event', callback=validate_non_empty, default=0)
+
 def create_event(name, date, description, capacity):
     """Create a new event."""
 
@@ -42,8 +48,8 @@ def create_event(name, date, description, capacity):
 
 # Register a participant for an event
 @cli.command()
-@click.option('--event-name', prompt='Event Name', help='Name of the event')
-@click.option('--participant-name', prompt='Participant Name', help='Name of the participant')
+@click.option('--event-name', prompt='Event Name', help='Name of the event', callback=validate_non_empty, default='')
+@click.option('--participant-name', prompt='Participant Name', help='Name of the participant',callback=validate_non_empty, default='')
 def register_participant(event_name, participant_name):
     """Register a participant for an event."""
   
@@ -67,8 +73,8 @@ def register_participant(event_name, participant_name):
 
 # Add speaker to an event
 @cli.command()
-@click.option('--event-name', prompt='Event Name', help='Name of the event')
-@click.option('--speaker-name', prompt='Speaker Name', help='Name of the speaker')
+@click.option('--event-name', prompt='Event Name', help='Name of the event', callback=validate_non_empty, default='')
+@click.option('--speaker-name', prompt='Speaker Name', help='Name of the speaker', callback=validate_non_empty, default='')
 def add_speaker(event_name, speaker_name):
     """Add a speaker to an event."""
    
@@ -89,8 +95,8 @@ def add_speaker(event_name, speaker_name):
 
 # Add a venue to an event
 @cli.command()
-@click.option('--event-name', prompt='Event Name', help='Name of the event')
-@click.option('--venue-name', prompt='Venue Name', help='Name of the venue')
+@click.option('--event-name', prompt='Event Name', help='Name of the event', callback=validate_non_empty, default='')
+@click.option('--venue-name', prompt='Venue Name', help='Name of the venue', callback=validate_non_empty, default='')
 def add_venue(event_name, venue_name):
     """Add a venue to an event."""
    
@@ -111,7 +117,7 @@ def add_venue(event_name, venue_name):
 
 # Displays List of registered participants
 @cli.command()
-@click.option('--event-name', prompt='Event Name', help='Name of the event')
+@click.option('--event-name', prompt='Event Name', help='Name of the event', callback=validate_non_empty, default='')
 def list_participants(event_name):
     """List all registered participants for an event."""
     
