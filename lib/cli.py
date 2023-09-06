@@ -108,4 +108,16 @@ def list_participants(event_name):
     session = create_session(engine) 
 
     # Find the event by name
-    event = session.query(Event).filter_by(name=event_name).first()    
+    event = session.query(Event).filter_by(name=event_name).first()   
+
+    if event:
+        participants = event.participants
+        if participants:
+            click.echo(f'List of Registered Participants for "{event_name}":')
+            for participant in participants:
+                click.echo(participant.name)
+        else:
+            click.echo(f'No participants registered for "{event_name}".')
+    else:
+        click.echo(f'Event with name "{event_name}" not found.')
+ 
