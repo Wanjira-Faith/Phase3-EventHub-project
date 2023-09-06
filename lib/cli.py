@@ -35,3 +35,6 @@ def register_participant(event_name, participant_name):
   
     # Create a session using create_session from utils.py
     session = create_session(engine)    
+
+    # Find the event by name
+    event = session.query(Event).filter_by(name=event_name).first()
