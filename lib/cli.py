@@ -149,3 +149,6 @@ def list_events():
             click.echo(f"Event Name: {event_details['Name']}, Date: {event_details['Date']}")
     else:
         click.echo("No events found in the database.")
+
+if __name__ == '__main__':
+    cli()        
