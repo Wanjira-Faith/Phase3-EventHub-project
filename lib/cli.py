@@ -19,3 +19,7 @@ def create_event(name, date, description, capacity):
 
 # Create a session using create_session from utils.py
     session = create_session(engine)   
+
+    event = Event(name=name, date=date, description=description, capacity=capacity)
+    session.add(event)
+    session.commit()
