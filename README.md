@@ -3,8 +3,8 @@
 # Table of contents
 1. Introduction
 2. Getting started
-3. Usage
-4. Features
+3. Features
+4. Usage
 5. Commands
 6. Contributing
 7. License
@@ -25,13 +25,6 @@ Before using Event Hub, ensure that you meet the following prerequisites:
  2. Navigate to the project directory.
  3. Install the required dependencies.
 
-# Usage
-To begin using Event Hub, execute the `cli.py` script: 
-
-    python cli.py
-
-This command launches the CLI interface, providing access to a wide range of commands tailored to facilitate event creation, management, and tracking.
-
 # Features
 Event Hub offers an array of features designed to simplify the event management tasks:
 
@@ -46,6 +39,13 @@ Event Hub offers an array of features designed to simplify the event management 
 * List Participants: Instantly view a list of registered participants for any event in the database.
 
 * List Events: Display events in chronological order, sorted by date.
+
+# Usage
+To begin using Event Hub, execute the `cli.py` script: 
+
+    python cli.py
+
+This command launches the CLI interface, providing access to a wide range of commands tailored to facilitate event creation, management, and tracking.
 
 # Commands
 Here is a list of available commands and their use cases:
