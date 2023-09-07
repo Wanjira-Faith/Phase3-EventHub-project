@@ -1,28 +1,33 @@
-# Phase3-EventHub-project
-
-# Table of contents
-1. Introduction
-2. Getting started
-3. Features
-4. Usage
-5. Commands
-6. License
-7. Author
+# Event Hub Suite
 
 # Introduction
-Event Hub is a versatile and user-friendly command-line interface (CLI) tool designed to simplify event management. Whether you're organizing a small gathering, a corporate conference, or anything in between, Event Hub is here to streamline your event planning process. With Event Hub, you can effortlessly create, manage and track events, participants, speakers, and venues, all from the comfort of your terminal.
+Event Hub is a versatile and user-friendly command-line interface (CLI) tool designed to simplify event management. Whether you're organizing a small gathering, a corporate conference, or anything in between, Event Hub will streamline your event planning process. With Event Hub, you can effortlessly create, manage, and track events, participants, speakers and venues, all from the convenience of your terminal. 
+
+# Table of contents
+1. Getting started
+   * Prerequisites
+   * Installation
+2. Features
+3. Usage
+4. Commands
+5. License
+6. Author
 
 # Getting Started
- # Prerequisites
-Before using Event Hub, ensure that you meet the following prerequisites:
+   # Prerequisites
+  Before you start, ensure that you meet the following prerequisites:
+   * Python 3.6 or higher
+   * Git 
 
-* Python 3.8 or higher
-* Git 
-
- # Installation
+  # Installation
  1. Clone the repository to your local machine.
  2. Navigate to the project directory.
- 3. Install the required dependencies.
+ 3. Set up a virtual environment and install the required dependencies: 
+
+    `pipenv install`.
+4. Activate  the virtual environment: 
+
+   `pipenv shell`.
 
 # Features
 Event Hub offers an array of features designed to simplify the event management tasks:
@@ -40,7 +45,7 @@ Event Hub offers an array of features designed to simplify the event management 
 * List Events: Display events in chronological order, sorted by date.
 
 # Usage
-To begin using Event Hub, execute the `cli.py` script: 
+To get started, execute the `cli.py` script: 
 
     python cli.py
 
@@ -89,3 +94,5 @@ This project is licensed under the MIT License.
 
 # Author
 Wanjira Faith(Software Engineer)
+
+wanjirafaith22@gmail.com
