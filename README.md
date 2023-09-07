@@ -84,3 +84,6 @@ View a list of registered participants for a specific event by providing the eve
       python cli.py list-events
 
 Display a chronological list of events, ordered by their respective dates.
+
+# License
+This project is licensed under the MIT License. 
