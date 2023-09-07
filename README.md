@@ -12,3 +12,15 @@
 
 # Introduction
 Event Hub is a versatile and user-friendly command-line interface (CLI) tool designed to simplify event management. Whether you're organizing a small gathering, a corporate conference, or anything in between, Event Hub is here to streamline your event planning process. With Event Hub, you can effortlessly create, manage, and track events, participants, speakers, and venues, all from the comfort of your terminal.
+
+# Getting Started
+ # Prerequisites
+Before using Event Hub, ensure that you meet the following prerequisites:
+
+* Python 3.8 or higher
+* Git 
+
+ # Installation
+ 1. Clone the repository to your local machine.
+ 2. Navigate to the project directory.
+ 3. Install the required dependencies.
