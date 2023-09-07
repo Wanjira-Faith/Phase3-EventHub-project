@@ -24,3 +24,11 @@ Before using Event Hub, ensure that you meet the following prerequisites:
  1. Clone the repository to your local machine.
  2. Navigate to the project directory.
  3. Install the required dependencies.
+
+# Usage
+To begin using Event Hub, execute the `cli.py` script: 
+
+    python cli.py
+
+This command launches the CLI interface, providing access to a wide range of commands tailored to facilitate event creation, management, and tracking.
+
